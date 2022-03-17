@@ -42,4 +42,19 @@
                 ->2^90 mod 13 = ((2^40 mod 13)*(2^50 mod 13))%13
                 (2^40랑 2^50은 한번에 계산 가능하니까 그냥 풀림)
                 
+       페르마의 소정리
+          A가 정수이고 P가 소수이고 A%P!=0일때 A^P ≡ A (mod P)를 만족한다.
+          즉 A^P mod p = A mod P 를 만족한다
+          조금만 더 응용하면
+          A^P mod p = A mod P
+          {A*A^(P-1)} mod P = A mod P (모듈로 연산의 속성에 의해서)
+          A mod P * A^(P-1) mod P = A mod P
+          A^(P-1) mod P = 1 이고 한단계 더 나아가면
+          {A*A^(P-2)} mod P = 1
+          A mod P * A^(P-2) mod P = 1
+          이 되기 때문에 A mod P 와 A^(P-2) mod P는 서로 곱셈에 대한 역원이다.
+          
+          
+          
+                
   
