@@ -1,0 +1,80 @@
+vector
+
+  #include<vector>
+  using namespace std;
+  vector<int> v;
+  vector<int> v(5); //0으로 초기화된 5개 원소가진 벡터생성
+  vector<int> v(5,2); //2로 초기화된 5개 원소가진 벡터생성
+  vector<int> v2(v); //v를 복사해서 내용이 똑같은 v2생성
+  v.clear() //원소초기화, 메모리는 남아있음, 사이즈는 0됨
+  반복자 사용하기 : 
+    vector<int>::iterator iter;
+    for(iter = v.begin(); iter<v.end(); ++iter){
+      cout<<*iter<<endl;
+    }
+   
+   
+    
+stack
+
+  -선입후출
+  #include<stack>
+  stack<int> s;
+  stack.push(5);
+  stack.pop();
+  stack.top(); //제일 최상위 데이터 반환
+  stack.size(); //원소 개수 반환
+  stack.empty();  //비어있으면 1 아니면 0반환
+  
+  
+  
+queue
+
+  -선입선출
+  #include<queue>
+  queue<int> q;
+  queue.push(5);
+  queue.pop();
+  queue.top();
+  queue.size();
+  queue.empty();
+  
+ 
+ 
+ set
+ 
+  -unique한 원소들을 특별한 순서에 따라 저장하는 '연관' 컨테이너임
+  -이진탐색 트리로 구현됨, insert하면 원소(=키)가 자동정렬됨(디폴트는 오름차순이긴한데 순서는 조정가능)
+  #include<set>
+  set<int> s;
+  set<pair<int, string>> s;
+  s.being(), s.end();// 벡터랑 똑같음
+  s.insert(k);
+  s.erase(k); //k가있으면 성공했단뜻으로 1반환, 없으면 0반환
+  s.count(k); //있으면 1반환, 없으면 0반환 (사실상 unique하므로 0또는 1밖에 안됨)
+  반복자 사용하기 : 
+    set<int>::iterator it;
+    for(it = s.begin(); it!=s.end(); ++it){
+	  	cout<<*it<<endl;
+	  }
+  
+  
+  
+  
+  map
+  
+    -key와 value가 쌍으로 저장됨(pair형태로)
+    -key는 중복불가능함
+    #include<map>
+    map<int, string> m; //pair형태지만 중괄호 없음
+    m.insert({"jun", 68}) == m.insert(make_pair("jun", 68)) == m["jun"] = 68
+      => 다 똑같음
+    if(m.count({"jun"})==0){  //처럼 씀
+		  cout<<m["jun"];
+	  }
+    m.erase("jun"); //key값을 넣어서 지운다
+    반복자 사용하기 : 
+      for(iter = m.begin(); iter!=m.end(); ++iter){
+		    cout<<iter->first<<" "<<iter->second<<endl;
+	    }
+  
