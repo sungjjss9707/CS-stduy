@@ -1,0 +1,44 @@
+이분 매칭
+
+  이분 매칭(Bipartite Matching) 알고리즘은 네트워크 유량 알고리즘과 연계되는 개념으로, 이분 그래프에서 두 그룹간의 최대 매칭을 의미한다.
+  흐름도를 표현해보면 간선 용량이 1인 네트워크 플로우 문제로 이해할 수 있다. 
+  다만, 이분 매칭은 깊이 우선 탐색(DFS)을 적용해 에드몬드 카프 알고리즘보다 좀 더 효율적인 복잡도를 구현할 수 있다.
+  시간복잡도 : O(V * E)
+  구현 프로세스 : 
+      1. 처음 정점이 a가 아무거도 선택 안된 상황에서 상대편 처음정점 1을 선택한다.
+      2. 두번째 정점 b가 1을 선택하려고 하는데 a가 1을 선택한 상황이므로 a가 그다음 가리키는 3을 선택하고, 
+         b는 1을 선택한다.
+      3. 세번째 정점 c가 처음 가리키는 정점 2를 바로 선택 가능하므로 선택한다.
+      4. 네번째 정점 d가 3을 선택하려고 하면 a가 점유하고 있으므로 a가 세번째 가리키는 정점 4를 선택하게 하고, 
+         d는 3을 점유한다.
+         
+bool dfs(int person){
+	int i, task;
+	for(i=0; i<v[person].size(); ++i){
+		task = v[person][i];
+		if(task_done[task]) continue;
+		task_done[task] = true;
+		if(task_master[task]==-1){
+			task_master[task] = person;
+			return true;
+		}
+		if(dfs(task_master[task])){
+			task_master[task] = person;
+			return true;
+		}
+		
+	}
+	return false;
+}
+
+int solve(){
+	int i, dap=0;
+	clear();
+	for(i=1; i<=numofpeople; ++i){
+		done_clear();
+		if(dfs(i)){
+			dap++;
+		}
+	}
+	return dap;
+}
