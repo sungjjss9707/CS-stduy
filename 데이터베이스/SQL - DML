@@ -1,0 +1,23 @@
+DML
+
+  테이블에 데이터를 검색, 삽입, 수정, 삭제하는데 사용하며 SELECT, INSERT, DELETE, UPDATE문 등이 있다.
+  여기서 SELECT 문은 특별히 Query문(질의어)라고도 한다.
+  
+  *CRUD : Create(생성), Retrieve(검색), Update(수정), Delete(삭제)의 첫 자를 따서 만든 단어이다.
+  
+  INSERT 문 : 테이블에 새로운 튜플을 삽입하는 명령
+              INSERT INTO 테이블(필드이름1, 필드이름2) VALUES (값1, 값2);
+              INSERT INTO Book(bookid, bookname, publisher) VALUES (14, '스포츠 의학', '한솔의학서적');
+  
+  UPDATE 문 : UPDATE문은 특정 속성 값을 수정하는 명령이다.
+              UPDATE 테이블 SET 필드이름1=값1, 필드이름2=값2 WHERE 조건문;
+              UPDATE Customer SET address='대한민국 부산' WHERE custid = 5;
+              
+  DELETE 문 : DELETE문은 테이블에 있는 기존 튜플을 삭제하는 명령이다.
+              DELETE FROM 테이블 WHERE 조건문;
+              DELETE FROM Customer WHERE custid=5;
+              DELETE FROM Customer; (모든 고객 삭제)
+              
+  SELETE 문 : 테이블에 저장된 데이터를 검색하는 명령어이다.
+              SELETE 컬럼명 FROM 테이블명 WHERE 조건문;
+              SELETE * FROM Book WHERE price = 10000;
