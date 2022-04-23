@@ -1,0 +1,16 @@
+IPv6
+   IP 주소가 부족해짐에 따라 새롭게 고안된 IP 주소 체계이다. 기존의 32-bit의 주소가 128-bit로 확장되었다.
+   오늘날 네트워크 기능을 가지는 장비(L3 Router, L4 Switch, PC, Server 등)들의 대부분은 IPv4 주소와 IPv6 주소를 모두 지원하고 있으며, 천천히 IPv6로 전환중
+  IPv6 Datagram은 Header와 Payload로 구성됨
+  기본 Header는 40바이트를 차지하며, 확장 Header와 상위 계층 Data는 65,535바이트까지의 정보를 가질 수 있다.
+  
+  각 필드의 역할
+      Version	: IP의 버전 전호를 의미. IPv6에서는 6의 값을 가진다.
+      Traffic : class	IPv4의 Type of service 필드와 유사하다.
+      Flow label	: Data의 특정한 흐름을 위한 특별한 처리를 제공하기 위해 사용된다.
+      Payload length	: 기본 Header를 제외한 IP Datagram의 길이를 의미한다. IPv6의 기본 Header의 길이는 40바이트로 고정되어 있기 때문에 페이로드의 길이만 정의하면 된다.
+      Next hdr	: Next hdr 필드는 첫 확장 Header의 종류를 정의하거나 Datagram의 기본 Header를 뒤따르는 Header를 의미한다. 이 필드는 IPv4의 Upper-layer Protocol 필드와 유사.
+      Hop limit	: IPv4의 Time-to-live 필드와 같은 목적으로 사용된다.
+      Source address(128bits), Destination address(128bits) :	출발지, 목적지 주소를 식별하기 위해 사용된다.
+      Data	: IPv4와 달리 IPv6의 Data(Payload) 필드는 다른 형태와 의미를 가진다.
+  
