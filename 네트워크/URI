@@ -1,0 +1,14 @@
+URI(Uniform Resource Identifiers)
+
+  자원의 위치를 알려주기 위한 프로토콜이다.
+  URI는 HTTP와는 독립된 다른 체계다.
+  World Wide Web(www)상에서 접근하고자 하는 자원의 위치를 나타내기 위해서 사용한다.
+  자원은 HTML문서, 이미지, 동영상, 오디오, 텍스트 문서 등 모든 것이 될 수 있다.
+  
+  웹페이지의 위치를 나타내기 위해서 사용하는 https://www.naver.com/index.html 등이 URI의 예다.
+  https : 자원에 접근하기 위해서 https 프로토콜을 사용한다.
+  www.naver.com : 자원의 인터넷 상에서의 위치는 www.naver.com 이다. 
+                  도메인은 ip 주소로 변환되므로, ip 주소로 서버의 위치를 찾을 수 있다.
+  index.html : 요청할 자원의 이름이다
+  
+  이렇게 "프로토콜", "위치", "자원명" 으로 어디에 있던지 자원에 접근할 수 있다.
