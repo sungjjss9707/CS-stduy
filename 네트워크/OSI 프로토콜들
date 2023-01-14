@@ -23,6 +23,7 @@
   IP, 
   ARP : IP A가 IP B로 보내려하는데 맥주소를 모르면 ARP프로토콜을 통해 B 의 IP주소를 브로드캐스팅 한다.
         B가 받으면 A한테 맥주소를 반환함
+        Address Resolution Protocol 의 줄인말임
 
 2계층
   이더넷, MAC
